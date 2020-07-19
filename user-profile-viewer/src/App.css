@@ -13,3 +13,8 @@ body {
 	background-color: #fff;
 	color: #333;
 }
+.wrapper {
+	margin: 2rem 1rem;
+	overflow: hidden;
+	padding: 0 2rem;
+}
