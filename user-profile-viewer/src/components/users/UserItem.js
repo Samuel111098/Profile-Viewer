@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 import './UserItem.css';
 
 const UserItem = ({ user: { login, avatar_url, html_url, gists_url } }) => {
@@ -8,10 +9,9 @@ const UserItem = ({ user: { login, avatar_url, html_url, gists_url } }) => {
 			<Card.Img className='round-img' variant='top' src={avatar_url} />
 			<Card.Body>
 				<Card.Title>{login}</Card.Title>
-				<Card.Text>{gists_url}</Card.Text>
-				<a href={html_url} className='btn'>
+				<Link to={`/user/${login}`} className='btn'>
 					Read More
-				</a>
+				</Link>
 			</Card.Body>
 		</Card>
 	);

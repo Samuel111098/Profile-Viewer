@@ -7,7 +7,7 @@ const Jumbo = () => {
 	return (
 		<div>
 			<Jumbotron fluid>
-				<Container>
+				<Container className='cont'>
 					<i className='fab fa-github' />
 					<h1>Github Profile Viewer</h1>
 				</Container>

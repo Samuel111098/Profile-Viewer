@@ -18,3 +18,14 @@ body {
 	overflow: hidden;
 	padding: 0 2rem;
 }
+.cont1 {
+	margin: 2rem 10rem;
+	padding: 1rem;
+}
+.cont2 {
+	margin: 2rem 10rem;
+	padding: 1rem;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}

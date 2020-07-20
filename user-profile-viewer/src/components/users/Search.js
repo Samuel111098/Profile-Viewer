@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 class Search extends Component {
 	state = {
@@ -10,12 +11,17 @@ class Search extends Component {
 
 	onSubmit = (e) => {
 		e.preventDefault();
-		//console.log(this.state.text);
-		this.props.searchUsers(this.state.text);
-		this.setState({ text: '' });
+		if (this.state.text === '') {
+			alert('Please Enter Values');
+		} else {
+			//console.log(this.state.text);
+			this.props.searchUsers(this.state.text);
+			this.setState({ text: '' });
+		}
 	};
 
 	render() {
+		const { clearUsers, showClear } = this.props;
 		return (
 			<div>
 				<Form onSubmit={this.onSubmit}>
@@ -28,6 +34,11 @@ class Search extends Component {
 					/>
 					<input style={btnStyle} type='submit' value='search' />
 				</Form>
+				{showClear && (
+					<Button style={btn1Style} onClick={clearUsers} variant='light'>
+						Clear
+					</Button>
+				)}
 			</div>
 		);
 	}
@@ -38,7 +49,17 @@ const btnStyle = {
 	display: 'block',
 	padding: '1rem',
 	width: '100%',
-	marginTop: '1rem'
+	marginTop: '1rem',
+	cursor: 'pointer'
+};
+
+const btn1Style = {
+	backgroundColor: 'rgb(235,235,235)',
+	display: 'block',
+	padding: '1rem',
+	width: '100%',
+	marginTop: '1rem',
+	borderRadius: '0px'
 };
 
 const enterStyle = {
