@@ -32,7 +32,7 @@ export class User extends Component {
 						<Col style={{ marginLeft: '2rem' }}>
 							<h1>{name}</h1>
 							<h5>@{login}</h5>
-							<h5> Location:{location} </h5>
+							<h5> Location: {location === null ? 'Not Available' : location} </h5>
 						</Col>
 					</Row>
 					<Row className='cont1'>
